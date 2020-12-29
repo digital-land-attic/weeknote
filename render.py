@@ -45,14 +45,16 @@ def read_content_file(filename):
     return content
 
 
-def render_pages(parent_dir):
-    pages = get_content_pages(parent_dir)
+def render_pages(directory, parent_dir=""):
+    path_to_directory = os.path.join(parent_dir, directory)
+    pages = get_content_pages(path_to_directory)
 
     for page in pages:
-        p = os.path.join(parent_dir, page)
+        p = os.path.join(path_to_directory, page)
         if os.path.isdir(p):
             # handle directories
             print(p, "is a directory")
+            render_pages(page, path_to_directory)
         elif page.endswith(".md"):
             # compile and render markdown file
             fn = Path(p)
