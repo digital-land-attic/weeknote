@@ -1,0 +1,19 @@
+{% for summary in summaries  %}
+<article class="blog-post blog-post-preview">
+  <header>
+    <h2 class="govuk-heading-l">
+        <a class="govuk-link" href="{{ summary.url }}">{{ summary.title }}</a>
+    </h2>
+  </header>
+  <div class="markdown-output entry-summary">
+    <p>{{ summary.summary|markdown }}</p>
+  </div>
+  <footer class="entry-footer">
+    <ul class="govuk-list">
+        <li>
+        <a class="govuk-link read-more" href="{{ summary.url }}">Read more <span class="govuk-visually-hidden">about this week</span></a>
+        </li>
+    </ul>
+  </footer>
+</article>
+{% endfor %}

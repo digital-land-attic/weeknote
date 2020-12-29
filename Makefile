@@ -9,3 +9,8 @@ render:
 
 clean::
 	rm -rf $(DOCS_DIR)
+
+
+local:
+	mkdir -p $(DOCS_DIR)
+	python3 render.py --local
