@@ -4,7 +4,7 @@
 def first_sentence(s):
     sentences = s.split(".")
     if len(sentences) > 0:
-        return sentences[0].strip("_")
+        return sentences[0].strip("_") + "."
     return s
 
 
