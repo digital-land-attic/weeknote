@@ -51,6 +51,8 @@ def read_content_file(filename, expanded=False):
         else filename.with_suffix("")
     )
     content["date"] = file_content["attributes"].get("date")
+    content["displayDate"] = True
+    content["section"] = "Weeknote"
 
     if expanded:
         content["body"] = file_content["body"]
@@ -83,11 +85,19 @@ def render_index():
     summaries = []
     all = get_content_pages(content_dir)
     weeknotes = markdown_files_only(all)
-    for weeknote in sorted(weeknotes):
+    for weeknote in sorted(weeknotes, reverse=True):
         path_to_file = os.path.join(content_dir, weeknote)
         fn = Path(path_to_file)
         contents = read_content_file(fn, expanded=True)
-        summaries.append(create_summary(contents, fn))
+        summaries.append(
+            create_summary(
+                contents,
+                fn,
+                section=contents["section"],
+                displayDate=True,
+                date=contents["date"],
+            )
+        )
 
     output_path = os.path.join(output_dir, "index.html")
     render(output_path, index_template, summaries=summaries)

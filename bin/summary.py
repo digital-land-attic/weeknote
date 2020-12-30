@@ -8,7 +8,7 @@ def first_sentence(s):
     return s
 
 
-def create_summary(file_contents, fn):
+def create_summary(file_contents, fn, **kwargs):
     summary = {}
     summary["title"] = file_contents["title"]
     summary["url"] = fn.stem
@@ -17,4 +17,4 @@ def create_summary(file_contents, fn):
         if file_contents["frontmatter"].get("summary") is not None
         else first_sentence(file_contents["body"])
     )
-    return summary
+    return {**summary, **kwargs}

@@ -17,7 +17,7 @@
         "href": "/weeknote"
       },
       {
-        "text": content.title
+        "text": content.date
       }
     ]
   }) }}
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-xl">{{ content.caption }}{% if content.displayDate %}&mdash; {{ content.date }}{% endif %}</span>
+<span class="govuk-caption-xl">{{ content.section }}{% if content.displayDate %} &mdash; {{ content.date }}{% endif %}</span>
 <h1 class="govuk-heading-xl">{{ content.title }}</h1>
 
 <div class="govuk-grid-row">
