@@ -3,6 +3,10 @@
 
 {% set project_name = project|replace("-", " ")|capitalize %}
 
+{%- block pageTitle -%}
+Weeknotes {% if content.displayDate %} &mdash; {{ content.date }}{% endif %} | Digital Land
+{%- endblock pageTitle -%}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}
