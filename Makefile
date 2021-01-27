@@ -1,16 +1,17 @@
 DOCS_DIR=./docs/
 
-init:
-	pip install -r requirements.txt
-
+# default action is to build
 render:
 	mkdir -p $(DOCS_DIR)
 	python3 render.py
 
+init:
+	pip install -r requirements.txt
+
 clean::
 	rm -rf $(DOCS_DIR)
 
-
+# TBD: remove, make the same links work locally and on the site
 local:
 	mkdir -p $(DOCS_DIR)
 	python3 render.py --local
