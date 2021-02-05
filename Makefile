@@ -1,3 +1,5 @@
+# current git branch
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 DOCS_DIR=./docs/
 
 # default action is to build
@@ -10,6 +12,10 @@ init:
 
 clean::
 	rm -rf $(DOCS_DIR)
+
+commit-docs::
+	git add docs
+	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt weeknotes $(shell date +%F)"; git push origin $(BRANCH))
 
 # TBD: remove, make the same links work locally and on the site
 local:
