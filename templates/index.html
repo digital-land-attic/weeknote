@@ -32,7 +32,7 @@
         </h2>
       </header>
       <div class="markdown-output entry-summary">
-        <p>{{ summary.summary|markdown }}</p>
+        {{ summary.summary|markdown|safe }}
       </div>
       <footer class="entry-footer">
         <ul class="govuk-list">
