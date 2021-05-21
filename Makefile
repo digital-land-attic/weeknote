@@ -36,3 +36,6 @@ assets/js:
 	rsync -r $(LOCAL_FRONTEND)/digital_land_frontend/static/javascripts/ $(STATIC_DIR)/javascripts/
 
 assets:: assets/css assets/js
+
+server:
+	python -m http.server --directory docs/
