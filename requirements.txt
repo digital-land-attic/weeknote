@@ -1,2 +1,6 @@
 -e git+https://github.com/digital-land/digital-land-python.git#egg=digital-land
+-e git+https://github.com/digital-land/frontend.git#egg=digital-land-frontend
+MarkupSafe==2.0.1
+Jinja2
+Markdown
 frontmatter
