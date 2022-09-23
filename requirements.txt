@@ -1,2 +1,19 @@
+appdirs
+black
+click
+dataclasses
 -e git+https://github.com/digital-land/digital-land-python.git#egg=digital-land
 frontmatter
+importlib-metadata
+MarkupSafe==2.0.1
+Jinja2
+Markdown
+mypy-extensions
+pathspec
+PyYAML
+regex
+toml
+typed-ast
+typing-extensions
+zipp
+-e git+https://github.com/digital-land/frontend.git#egg=digital-land-frontend
