@@ -6,8 +6,6 @@ on:
       - 'docs/**'
     branches:
       - main
-  schedule:
-    - cron: '30 5 * * *'
   workflow_dispatch:
 
 env:
