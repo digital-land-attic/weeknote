@@ -5,6 +5,7 @@ DOCS_DIR=./docs/
 # default action is to build
 render:
 	mkdir -p $(DOCS_DIR)
+	touch $(DOCS_DIR)/.nojekyll
 	python3 render.py
 
 init:
